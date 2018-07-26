@@ -19,7 +19,7 @@ pipeline{
         }
         stage('Deploy to Staging'){
             steps{
-                build job: 'maven-deploy-to-staging'
+                build job: 'pipe-deploy-to-staging'
             }
         }
 
@@ -28,7 +28,7 @@ pipeline{
                 timeout(time:5, unit:'DAYS'){
                     input message: 'Approve PRODUCTION Deployment?'
                 }
-                build job: 'maven-deploy-to-production'
+                build job: 'pipe-deploy-to-prod'
             }
             post{
                 success{
