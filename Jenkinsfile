@@ -19,7 +19,7 @@ pipeline{
         }
         stage('Deploy to Staging'){
             steps{
-                build job: 'maven-deploy-to-stage'
+                build job: 'maven-deploy-to-staging'
             }
         }
     }
